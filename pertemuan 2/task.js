@@ -1,4 +1,4 @@
-var users = [
+const users = [
 
     
     {
@@ -33,9 +33,9 @@ var users = [
 ]
 
 
-var all = (users) =>   {
+const all = (users) =>   {
     for( const key in users) {
-        var obj = users[key];
+        const obj = users[key];
         for (prop in obj) 
         console.log(`${prop}: ${obj[prop]}`);
         console.log("");
@@ -45,11 +45,11 @@ console.log("# Get all Users");
 (all(users));
 
 console.log("");
-var store = (user) => {
+const store = (user) => {
     users.push(user);
 
 };
-var newUser = {
+const newUser = {
     name: "Sabiq",
     age: 20,
     major: "informatics",
@@ -59,10 +59,10 @@ console.log("# Add new user = Sabiq");
 (all(users));
 console.log("");
 
-var update = (index, user) => {
+const update = (index, user) => {
         users[index] = user;
 }  
-var editUser = {
+const editUser = {
     name : "Isfhani Ghiyath",
     age: 23,
     major: "English",
