@@ -5,7 +5,7 @@
  */
 // CODE HERE
 
-import { formatUser, findByName, filterByMajor, } from "./controllers/UserController.js";
+import { formatUser, findByName, filterByMajor } from "./controllers/UserController.js";
 
 /**
  * Fungsi Main.
