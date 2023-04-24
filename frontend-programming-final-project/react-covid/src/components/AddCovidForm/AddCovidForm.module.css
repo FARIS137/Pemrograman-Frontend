@@ -1,0 +1,85 @@
+.container {
+  margin: 2rem; 
+}
+
+.addcovidform{
+  text-align: left;
+  justify-content: center;
+  
+  
+}
+.form__image{
+  max-width: 97%;
+  height: 300px;
+  border-radius: 10px;
+  margin-right: 2rem;
+  margin-top: 3rem;
+  
+}
+
+.addcovidform__option {
+height: 30px;
+border: 2px solid #06D6A0;
+width: 101%;
+border-radius: 8px;
+margin-bottom: 1rem;
+
+}
+.addcovidform__text {
+  height: 25px;
+  width: 99%;
+  border-radius: 8px;
+  border: 2px solid #06D6A0;
+
+}
+.addcovidform__title {
+  color: #4361ee;
+  font-size: 1.70rem;
+  text-align: center;
+  
+}
+
+.addcovidform__button{
+  padding: 0.5rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #06D6A0;
+  color: #fff;
+  margin-top: 1rem;
+  width: 102%;
+  cursor: pointer;
+
+
+
+  
+}
+
+
+@media (min-width: 768px) {
+  .addcovidform {
+    display: flex;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 100%;
+    margin: 3rem auto;
+   
+  }
+  .addcovidform {
+
+    display: flex;
+    text-align: left;
+    justify-content: center;
+  }
+
+  .addcovidform_right{
+  flex-basis: 40%;
+  }
+
+  .addcovidform__left{
+  flex-basis: 60%;
+  }
+
+}
