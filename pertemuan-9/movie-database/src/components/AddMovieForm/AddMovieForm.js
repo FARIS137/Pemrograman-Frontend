@@ -116,7 +116,7 @@ function AddMovieForm(props) {
                * Menambahkan infline if: operator &&
                * Jika isTitleError true maka render error
                */}
-              {isAlert && <Alert>Title Wajib Diisi</Alert>}
+              {isAlert.title && <Alert>Title Wajib Diisi</Alert>}
             </div>
             <div className={styles.form__group}>
               <label htmlFor="year" className={styles.form__label}>
@@ -136,7 +136,7 @@ function AddMovieForm(props) {
                * Menambahkan infline if: operator &&
                * Jika isDateError true maka render error
                */}
-              {isAlert && <Alert>Date Wajib Diisi</Alert>}
+              {isAlert.year && <Alert>Date Wajib Diisi</Alert>}
             </div>
             <div className={styles.form__group}>
               <label htmlFor="poster" className={styles.form__label}>
@@ -150,7 +150,7 @@ function AddMovieForm(props) {
                 type="text"
                 value={poster}
               />
-              {isAlert && <Alert>Poster Wajib Diisi</Alert>}
+              {isAlert.poster && <Alert>Poster Wajib Diisi</Alert>}
             </div>
             <div className={styles.form__group}>
               <label htmlFor="type" className={styles.form__label}>
@@ -167,7 +167,7 @@ function AddMovieForm(props) {
                 <option value="Drama">Drama</option>
                 <option value="Horor">Horor</option>
               </select>
-              {isAlert && <Alert>Poster Wajib Diisi</Alert>}
+              {isAlert.type && <Alert>Poster Wajib Diisi</Alert>}
 
             </div>
             <div>
