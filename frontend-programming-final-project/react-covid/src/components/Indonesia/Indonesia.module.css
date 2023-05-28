@@ -43,21 +43,21 @@
 }
 
 
-.cardDescription1 {
+.cardDescription:nth-child(0) {
   font-size: 32px;
   font-weight: bold;
   color: #06d6a0;
 
 }
 
-.cardDescription2 {
+.cardDescription:nth-child(1) {
   font-size: 32px;
   font-weight: bold;
   color: #118ab2;
 
 }
 
-.cardDescription3 {
+.cardDescription:nth-child(2) {
   font-size: 32px;
   font-weight: bold;
   color: #ff0000;
