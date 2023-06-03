@@ -11,18 +11,23 @@ function PopularMovie() {
   const [movies, setMovies] = useState([]);
   
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  useEffect(async () => {
+  async function fetchMovie() {
     const response = await axios(URL);
     setMovies(response.data.results);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  });
+  }
+
+useEffect(() => {
+  fetchMovie();
+// eslint-disable-next-line react-hooks/exhaustive-deps
+}, []);
+
 
 console.log(movies);
   return (
     <>
-      <Movies movies={movies} />
+      <Movies movies={movies} setMovies={setMovies} />
     </>
   );
-}
+  }
 
 export default PopularMovie;

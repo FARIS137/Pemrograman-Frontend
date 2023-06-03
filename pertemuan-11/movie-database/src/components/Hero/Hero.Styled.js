@@ -20,15 +20,19 @@ section {
 
 \
 h2 {
-  color: #4361ee;
+  color: #000000;
   margin-bottom: 1rem;
   font-size: 2.44rem;
 }
 
 h3 {
-  color: #b5179e;
+  color: #4361ee;
   margin-bottom: 1rem;
-  font-size: 1.59rem;
+  font-size: 1.59rem 100%;
+}
+a {
+  text-decoration: none;
+  color: #fff;
 }
 
 /* Medium Screen */

@@ -13,7 +13,7 @@ section {
 h2 {
   margin-bottom: 1rem;
   font-size: 2.44rem;
-  color: #4361ee;
+  color: #000000;
 }
 
 .container {

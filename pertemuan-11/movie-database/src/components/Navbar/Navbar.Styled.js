@@ -4,7 +4,7 @@ const StyledNavbar = styled.div`
 
 /* Small Screen */
 
-  background-color: #4361ee;
+  background-color: #dc381f;
   padding: 1rem;
   color: #fff;
 

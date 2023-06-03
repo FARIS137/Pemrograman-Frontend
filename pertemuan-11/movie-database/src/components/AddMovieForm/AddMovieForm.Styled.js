@@ -19,7 +19,7 @@ section {
 
 h2 {
   text-align: center;
-  color: #4361ee;
+  color: #000000;
   font-size: 2.22rem;
   margin-bottom: 1rem;
 }

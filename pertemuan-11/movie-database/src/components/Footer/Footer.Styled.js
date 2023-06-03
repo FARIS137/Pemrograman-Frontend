@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const StyledFooter = styled.div`
 /* Small Screen */
-  background-color: #4361ee;
+  background-color: #dc381f;
   color: #fff;
   padding: 1rem;
   text-align: center;
