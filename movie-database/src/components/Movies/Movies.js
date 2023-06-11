@@ -2,10 +2,9 @@ import { nanoid } from "nanoid";
 import Movie from "../Movie/Movie";
 import StyledMovies from "./Movies.Styled.js";
 
-
 function Movies(props) {
   // Destructing props: state movies
-  const { movies, setMovies } = props;
+  const { movies, setMovies, title } = props;
 
   function handleClick() {
     const movie = {
@@ -16,19 +15,14 @@ function Movies(props) {
       poster: "https://picsum.photos/300/400",
     };
 
-    /**
-     * Update state movies: setMovies
-     * Melakukan teknik spread untuk copy dan merge array
-     */
     setMovies([...movies, movie]);
   }
 
   return (
     <StyledMovies>
-    
       <div>
         <section>
-          <h2>Latest Movies</h2>
+          <h2>{title}</h2>
           <div class="container">
             {movies.map((movie) => {
               return <Movie key={movie.id} movie={movie} />;
@@ -37,7 +31,6 @@ function Movies(props) {
           <button onClick={handleClick}>Add Movie</button>
         </section>
       </div>
-    
     </StyledMovies>
   );
 }
