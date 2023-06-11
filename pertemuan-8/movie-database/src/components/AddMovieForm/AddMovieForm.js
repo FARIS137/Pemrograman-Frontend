@@ -15,7 +15,13 @@ function AddMovieForm(props) {
     type: "",
   });
 
-  const [isAlert, setIsAlert] = useState(false);
+  const [errors, setErrors] = useState({
+    title: false,
+    year: false,
+    poster: false,
+    type: false,
+  });
+  
   function handleChange(e) {
     // Destructing name dan value.
     const { name, value } = e.target;
