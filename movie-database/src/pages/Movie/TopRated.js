@@ -1,35 +1,27 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
+import Hero from "../../components/Hero/Hero";
+import Movies from "../../components/Movies/Movies";
+import ENDPOINTS from "../../utils/constants/endpoints";
 
-  import axios from 'axios';
-  import { useEffect, useState } from "react";
-  import Movies from "../../components/Movies/Movies";
-  
-  function TopRatedMovie() {
-    // eslint-disable-next-line no-unused-vars
-    const API_KEY = process.env.REACT_APP_API_KEY;
-    const URL = `https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}`;
-  
-    //Membuat State Movies
-    const [movies, setMovies] = useState([]);
-    
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    async function fetchMovie() {
-      const response = await axios(URL);
-      setMovies(response.data.results);
-    }
-  
+function TopRatedMovie() {
+  const [movies, setMovies] = useState([]);
+
+  async function fetchMovie() {
+    const response = await axios(ENDPOINTS.TOPRATED);
+    setMovies(response.data.results);
+  }
+
   useEffect(() => {
     fetchMovie();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  
-  
-  console.log(movies);
-    return (
-      <>
-        <Movies movies={movies} setMovies={setMovies} />
-      </>
-    );
-    }
-  
+
+  return (
+    <>
+      <Hero />
+      <Movies movies={movies} title="Top Rated" />
+    </>
+  );
+}
 
 export default TopRatedMovie;
