@@ -9,7 +9,10 @@ import TopRatedMovie from "./pages/Movie/TopRated";
 import Layout from "./Layout";
 import { ThemeProvider } from "styled-components";
 import theme from "./utils/constants/theme";
+<<<<<<< HEAD
 import Detail from "./pages/Movie/Detail";
+=======
+>>>>>>> 3e939cef5eb093677a5289482ab81722673aa120
 
 function App() {
   /**
@@ -30,8 +33,11 @@ function App() {
           <Route path="/movie/popular" element={<PopularMovie />} />
           <Route path="/movie/now" element={<NowPlayingMovie />} />
           <Route path="/movie/top" element={<TopRatedMovie />} />
+<<<<<<< HEAD
           <Route path="/movie/:id" element={<Detail/>} />
 
+=======
+>>>>>>> 3e939cef5eb093677a5289482ab81722673aa120
         </Routes>
       </Layout>
       </ThemeProvider> 
