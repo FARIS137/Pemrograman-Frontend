@@ -1,22 +1,12 @@
-import { nanoid } from "nanoid";
 import Movie from "../Movie/Movie";
 import StyledMovies from "./Movies.Styled.js";
+import { useSelector } from "react-redux";
 
 function Movies(props) {
   // Destructing props: state movies
-  const { movies, setMovies, title } = props;
+  const { title } = props;
 
-  function handleClick() {
-    const movie = {
-      id: nanoid(),
-      title: "Jigsaw Spiral",
-      year: 2021,
-      type: "Movie",
-      poster: "https://picsum.photos/300/400",
-    };
-
-    setMovies([...movies, movie]);
-  }
+  const movies = useSelector((store) => store.movies.movies);
 
   return (
     <StyledMovies>
@@ -28,7 +18,6 @@ function Movies(props) {
               return <Movie key={movie.id} movie={movie} />;
             })}
           </div>
-          <button onClick={handleClick}>Add Movie</button>
         </section>
       </div>
     </StyledMovies>

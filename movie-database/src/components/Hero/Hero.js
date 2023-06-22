@@ -14,6 +14,7 @@ function Hero() {
   console.log(trailer);
   useEffect(() => {
     getDetailMovie();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   async function getTrendingMovies() {

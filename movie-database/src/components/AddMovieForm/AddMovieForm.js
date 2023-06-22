@@ -7,12 +7,15 @@ import Image from "../ui/Button/Image/Image";
 import Input from "../ui/Button/Input/Input";
 import Select from "../ui/Button/Select/Select";
 import Label  from "../ui/Button/Label/Label";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addMovie } from "../../Features/MoviesSlice";
 
 // Menangkap props
 function AddMovieForm(props) {
   // Destructing props: state movies
-  const { movies, setMovies } = props;
-
+  const navigation = useNavigate();
+  const dispatch = useDispatch();
   const [formData, setFormData] = useState({
     title: "",
     year: "",
@@ -20,7 +23,13 @@ function AddMovieForm(props) {
     type: "",
   });
 
-  const [isAlert, setIsAlert] = useState(false)
+  const [isAlert, setIsAlert] = useState({
+    title: false,
+    year: false,
+    poster: false,
+    type: false,
+  });
+  
   function handleChange(e) {
     // Destructing name dan value.
     const { name, value } = e.target;
@@ -31,42 +40,23 @@ function AddMovieForm(props) {
     });
   }
 
-  function validate() {
-    if (formData.title === "") {
-      setIsAlert({
-        ...isAlert,
-        title: true,
-      });
-        return false
+  const validate = () => {
+    let isvalid = true;
+    let newAlert = { ...isAlert };
 
-    } else if (formData.year === "") {
-      setIsAlert({
-        ...isAlert,
-        year:true,
-      });
-      return false;
-
-    } else if (formData.poster === "") {
-      setIsAlert({
-       ...isAlert, 
-       poster: true,
-      });
-      return false;
-
-    } else if (formData.type === "") {
-      setIsAlert({
-        ...isAlert,
-        type:true,
-      });
-      return false;
-
-   } else {
-      setIsAlert(false);
-      return true;
+    for (const key in formData) {
+      if (formData[key] === "") {
+        newAlert[key] = true;
+        isvalid = false;
+      } else {
+        newAlert[key] = false;
+      }
     }
-  }
+    setIsAlert(newAlert);
+    return isvalid;
+  };
 
-  function addMovie() {
+  function submitmovit() {
     const movie = {
       id: nanoid(),
       title: formData.title,
@@ -75,15 +65,18 @@ function AddMovieForm(props) {
       poster: formData.poster,
     };
 
-    setMovies([...movies, movie]);
+    // setMovies([...movies, movie]);
+    dispatch(addMovie(movie));
+    navigation("/");
   }
 
   function handleSubmit(e) {
     e.preventDefault();
 
-    validate() && addMovie();
+    validate() && submitmovit();
   }
   const { title, year, poster, type } = formData;
+
 
   return (
     <StyledForm>
@@ -144,7 +137,7 @@ function AddMovieForm(props) {
                 <option value="Drama">Drama</option>
                 <option value="Horor">Horor</option>
               </Select>
-              {isAlert.type && <Alert>Poster Wajib Diisi</Alert>}
+              {isAlert.type && <Alert>Type Wajib Diisi</Alert>}
             </div>
               <Button variant="primary" full>Add Movie</Button>
           </form>

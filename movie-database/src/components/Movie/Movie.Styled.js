@@ -10,13 +10,8 @@ h3 {
   margin-bottom: 0.5rem;
 }
 
-<<<<<<< HEAD
-a{
-  text-decoration: none;
-}
 
-=======
->>>>>>> 3e939cef5eb093677a5289482ab81722673aa120
+
 p {
   color: #64748b;
 }
