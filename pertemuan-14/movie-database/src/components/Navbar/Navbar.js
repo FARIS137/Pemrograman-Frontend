@@ -1,10 +1,4 @@
-/**
- * Import CSS Module Navbar.
- * Disimpan di object styles
- */
-
-// Import Link dari React Router
-
+import { Link } from "react-router-dom";
 import StyledNavbar from "./Navbar.Styled.js";
 
 function Navbar() {
@@ -14,36 +8,36 @@ function Navbar() {
    */
   return (
     <StyledNavbar>
-    <div >
-      <nav>
-        <div>
-          <h1>Movie App</h1>
-        </div>
-        <div>
-          {/*
-           * Membuat Link/Navigasi.
-           * Menggunakan Link Component dari React Router
-           */}
-          <ul>
-            <li>
-              <a href="/">Home</a>
-            </li>
-            <li>
-              <a href="/movie/create">Add Movie</a>
-            </li>
-            <li>
-              <a href="/movie/popular">Popular</a>
-            </li>
-            <li >
-              <a href="/movie/now">Now Playing</a>
-            </li>
-            <li >
-              <a href="/movie/top">Top Rated</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </div>
+      <div>
+        <nav>
+          <div>
+            <h1>Movie App</h1>
+          </div>
+          <div>
+            {/*
+             * Membuat Link/Navigasi.
+             * Menggunakan Link Component dari React Router
+             */}
+            <ul>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/movie/create">Add Movie</Link>
+              </li>
+              <li>
+                <Link to="/movie/popular">Popular</Link>
+              </li>
+              <li>
+                <Link to="/movie/now">Now Playing</Link>
+              </li>
+              <li>
+                <Link to="/movie/top">Top Rated</Link>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
     </StyledNavbar>
   );
 }

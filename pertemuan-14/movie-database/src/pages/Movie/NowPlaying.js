@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import axios from "axios";
 import { useEffect } from "react";
 import Movies from "../../components/Movies/Movies";
@@ -8,7 +9,6 @@ import { updateMovies } from "../../Features/MoviesSlice/index";
 
 function NowPlayingMovie() {
   const dispatch = useDispatch();
-  // const [movies, setMovies] = useState([]);
   useEffect(() => {
     fetchMovie();
   }, []);

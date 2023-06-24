@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
@@ -12,7 +13,6 @@ const StyledDetailMovie = styled.div`
   gap: 1rem;
   text-align: center;
   padding: 1rem;
-
 
   img {
     border-radius: 25px;

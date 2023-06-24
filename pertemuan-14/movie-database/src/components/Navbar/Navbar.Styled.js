@@ -14,7 +14,7 @@ nav {
   flex-direction: column;
 }
 
-a {
+Link {
   text-decoration: none;
   color: #fff;
 }
