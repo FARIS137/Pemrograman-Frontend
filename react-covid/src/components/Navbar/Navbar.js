@@ -12,7 +12,7 @@ import StyledNavbar from "./Navbar.styled.js";
      <div>
        <nav >
          <div>
-           <h1 >Movie ID</h1>
+           <h1 >Covid ID</h1>
          </div>
          <div>
            {/*
