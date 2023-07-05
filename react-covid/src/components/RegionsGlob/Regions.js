@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import StyledRegionsGlob from "./Regions.styled.js";
-import protection from "./protection.png";
+import protection from "./protection-1.png";
 import smileIcon from "./smilling.png";
 import skullIcon from "./skull.png";
 
