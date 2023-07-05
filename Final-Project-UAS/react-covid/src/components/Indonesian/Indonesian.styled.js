@@ -77,7 +77,7 @@ h2 {
 /* Medium Screen */
 @media (min-width: 768px) {
   .card {
-    flex-basis: 20%;
+    flex-basis: 27%;
     width: 100%;
     height: 100%;
     margin: 1rem;
