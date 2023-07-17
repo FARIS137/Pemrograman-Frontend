@@ -1,16 +1,8 @@
-import React, { useEffect, useState } from "react";
 import StyledIndonesia from "./Indonesian.styled.js";
 
-function Indonesian() {
-  const [indonesian, setIndonesian] = useState([]);
+function Indonesian(props) {
+  const { indonesian } = props;
 
-  useEffect(() => {
-    fetch(`https://covid-fe-2023.vercel.app/api/indonesia.json`)
-      .then((response) => response.json())
-      .then((data) => {
-        setIndonesian(data.indonesia);
-      });
-  }, []);
   return (
     <StyledIndonesia>
       <div>
@@ -20,7 +12,7 @@ function Indonesian() {
           <div className="Group">
             {indonesian.map((data) => (
               <div className="card" key={data.status}>
-                <h2 >{data.status}</h2>
+                <h2>{data.status}</h2>
                 <p
                   className={
                     data.status === "confirmed"
