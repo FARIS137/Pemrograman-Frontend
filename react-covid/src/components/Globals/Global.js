@@ -1,22 +1,14 @@
-import React, { useEffect, useState } from "react";
 import StyledGlobal from "./Global.styled.js";
 
-function Global() {
-  const [global, setGlobal] = useState([]);
+function Global(props) {
+  const { global } = props;
 
-  useEffect(() => {
-    fetch(`https://covid-fe-2023.vercel.app/api/global.json`)
-      .then((response) => response.json())
-      .then((data) => {
-        setGlobal(data.global);
-      })
-  }, []);
-    return (
-      <StyledGlobal>
+  return (
+    <StyledGlobal>
       <div>
         <section>
           <h3>Global Situation</h3>
-          <p >Data Covid Berdasarkan Global</p>
+          <p>Data Covid Berdasarkan Global</p>
           <div className="Group">
             {global.map((data) => (
               <div className="card" key={data.status}>
@@ -24,12 +16,12 @@ function Global() {
                 <p
                   className={
                     data.status === "confirmed"
-                      ? "confirmed" 
+                      ? "confirmed"
                       : data.status === "recovered"
                       ? "recovered"
                       : "death"
                   }
-                >   
+                >
                   {data.total}
                 </p>
               </div>
@@ -37,9 +29,8 @@ function Global() {
           </div>
         </section>
       </div>
-      </StyledGlobal>
-    );
-    
+    </StyledGlobal>
+  );
 }
 
 export default Global;
